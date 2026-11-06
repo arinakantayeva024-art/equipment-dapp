@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_34-e7d8ed4f7d50ad55e96dbd60be71c734df998307",
+  "solcVersion": "0.8.34",
+  "solcLongVersion": "0.8.34+commit.80d5c536",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.21.2"
+  },
+  "userSourceNameMap": {
+    "contracts/Equipment.sol": "project/contracts/Equipment.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "osaka",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/Equipment.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.24;\r\n\r\ncontract Equipment {\r\n    address public owner;\r\n\r\n    struct EquipmentItem {\r\n        uint256 id;\r\n        string name;\r\n        string status;\r\n    }\r\n\r\n    mapping(uint256 => EquipmentItem) private equipment;\r\n    uint256[] private equipmentIds;\r\n\r\n    event EquipmentCreated(uint256 id, string name);\r\n    event EquipmentStatusChanged(uint256 id, string status);\r\n\r\n    modifier onlyOwner() {\r\n        require(msg.sender == owner, \"Access denied\");\r\n        _;\r\n    }\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function createEquipment(\r\n        uint256 id,\r\n        string memory name\r\n    ) public onlyOwner {\r\n        require(equipment[id].id == 0, \"Already exists\");\r\n\r\n        equipment[id] = EquipmentItem(id, name, \"Active\");\r\n        equipmentIds.push(id);\r\n\r\n        emit EquipmentCreated(id, name);\r\n    }\r\n\r\n    function getEquipment(\r\n        uint256 id\r\n    ) public view returns (\r\n        uint256,\r\n        string memory,\r\n        string memory\r\n    ) {\r\n        require(equipment[id].id != 0, \"Not found\");\r\n\r\n        EquipmentItem memory item = equipment[id];\r\n\r\n        return (item.id, item.name, item.status);\r\n    }\r\n\r\n    function getAllEquipment()\r\n        public view returns (EquipmentItem[] memory)\r\n    {\r\n        EquipmentItem[] memory result =\r\n            new EquipmentItem[](equipmentIds.length);\r\n\r\n        for (uint256 i = 0; i < equipmentIds.length; i++) {\r\n            result[i] = equipment[equipmentIds[i]];\r\n        }\r\n\r\n        return result;\r\n    }\r\n\r\n    function updateEquipmentStatus(\r\n        uint256 id,\r\n        string memory newStatus\r\n    ) public onlyOwner {\r\n        require(equipment[id].id != 0, \"Not found\");\r\n\r\n        equipment[id].status = newStatus;\r\n\r\n        emit EquipmentStatusChanged(id, newStatus);\r\n    }\r\n}"
+      }
+    }
+  }
+}

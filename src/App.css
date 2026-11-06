@@ -1,0 +1,56 @@
+
+body {
+  margin: 0;
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #1e293b;
+  border-radius: 15px;
+}
+
+h1 {
+  color: #60a5fa;
+}
+
+.wallet {
+  padding: 15px;
+  background: #334155;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+input, select {
+  display: block;
+  width: 95%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 7px;
+  border: none;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  margin: 7px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+pre {
+  background: #0f172a;
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 8px;
+}

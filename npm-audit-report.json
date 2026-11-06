@@ -1,0 +1,44 @@
+{
+  "message": "400 Bad Request - POST https://registry.npmjs.org/-/npm/v1/security/audits/quick - Bad Request",
+  "method": "POST",
+  "uri": "https://registry.npmjs.org/-/npm/v1/security/audits/quick",
+  "headers": {
+    "date": [
+      "Fri, 06 Nov 2026 10:36:14 GMT"
+    ],
+    "transfer-encoding": [
+      "chunked"
+    ],
+    "connection": [
+      "keep-alive"
+    ],
+    "cf-ray": [
+      "a56374bdc9c7dc3d-AKX"
+    ],
+    "cf-cache-status": [
+      "DYNAMIC"
+    ],
+    "server": [
+      "cloudflare"
+    ],
+    "npm-notice": [
+      "This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit"
+    ],
+    "set-cookie": [
+      "__cf_bm=KjJEMN_YyHDvpWeRGf8Yjck.EqbCNT_WaEo32VJFEBU-1793961374.3650644-1.0.1.1-4ZCbvlcWTjgCHei4r_RhlzFqwwb8zlt.3li2zXJsM9i03C0TBed7v0VEZbFVWEnrLuMaWkGMitC63XMDCWfv_7.g5DxtTxlKd8ncJqITs2NcAzJBxaw762uJEuscnIYh; HttpOnly; SameSite=None; Secure; Path=/; Domain=npmjs.org; Expires=Fri, 06 Nov 2026 11:06:14 GMT"
+    ],
+    "x-fetch-attempts": [
+      "1"
+    ]
+  },
+  "statusCode": 400,
+  "body": {
+    "statusCode": 400,
+    "error": "Bad Request",
+    "message": "Invalid package tree, run  npm install  to rebuild your package-lock.json"
+  },
+  "error": {
+    "summary": "",
+    "detail": ""
+  }
+}
