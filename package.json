@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile": "hardhat compile",
+    "test": "hardhat test"
   },
   "dependencies": {
     "ethers": "^6.17.0",
