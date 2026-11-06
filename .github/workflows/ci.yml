@@ -35,21 +35,22 @@ jobs:
       - name: Compile smart contracts
         run: npm run compile
 
-      - name: Run automated tests
+      - name: Automated tests
         run: npm test
 
-      - name: Static code analysis
+      - name: Static analysis
         run: npm run lint
 
-      - name: Dependency vulnerability audit
+      - name: Dependency security audit
         run: npm audit --audit-level=high
 
-      - name: CI summary
+      - name: CI success summary
         if: success()
         run: |
-          echo "CI pipeline completed successfully."
+          echo "CI pipeline completed successfully"
+          echo "Dependencies: PASSED"
           echo "Frontend build: PASSED"
-          echo "Smart contract compilation: PASSED"
+          echo "Smart contracts: PASSED"
           echo "Automated tests: PASSED"
           echo "Static analysis: PASSED"
           echo "Dependency audit: PASSED"

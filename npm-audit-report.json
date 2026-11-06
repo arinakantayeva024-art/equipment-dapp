@@ -1,44 +1,384 @@
 {
-  "message": "400 Bad Request - POST https://registry.npmjs.org/-/npm/v1/security/audits/quick - Bad Request",
-  "method": "POST",
-  "uri": "https://registry.npmjs.org/-/npm/v1/security/audits/quick",
-  "headers": {
-    "date": [
-      "Fri, 06 Nov 2026 10:36:14 GMT"
-    ],
-    "transfer-encoding": [
-      "chunked"
-    ],
-    "connection": [
-      "keep-alive"
-    ],
-    "cf-ray": [
-      "a56374bdc9c7dc3d-AKX"
-    ],
-    "cf-cache-status": [
-      "DYNAMIC"
-    ],
-    "server": [
-      "cloudflare"
-    ],
-    "npm-notice": [
-      "This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit"
-    ],
-    "set-cookie": [
-      "__cf_bm=KjJEMN_YyHDvpWeRGf8Yjck.EqbCNT_WaEo32VJFEBU-1793961374.3650644-1.0.1.1-4ZCbvlcWTjgCHei4r_RhlzFqwwb8zlt.3li2zXJsM9i03C0TBed7v0VEZbFVWEnrLuMaWkGMitC63XMDCWfv_7.g5DxtTxlKd8ncJqITs2NcAzJBxaw762uJEuscnIYh; HttpOnly; SameSite=None; Secure; Path=/; Domain=npmjs.org; Expires=Fri, 06 Nov 2026 11:06:14 GMT"
-    ],
-    "x-fetch-attempts": [
-      "1"
-    ]
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@nomicfoundation/hardhat-ethers": {
+      "name": "@nomicfoundation/hardhat-ethers",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat",
+        "zod"
+      ],
+      "effects": [],
+      "range": "3.0.7 || >=4.0.0-next.0",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ethers"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-ethers",
+        "version": "4.0.13",
+        "isSemVerMajor": true
+      }
+    },
+    "@nomicfoundation/hardhat-ethers-chai-matchers": {
+      "name": "@nomicfoundation/hardhat-ethers-chai-matchers",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ethers-chai-matchers"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-ignition": {
+      "name": "@nomicfoundation/hardhat-ignition",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@nomicfoundation/hardhat-verify",
+        "hardhat"
+      ],
+      "effects": [],
+      "range": ">=3.0.0-next.0",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ignition"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-ignition",
+        "version": "0.15.16",
+        "isSemVerMajor": true
+      }
+    },
+    "@nomicfoundation/hardhat-ignition-ethers": {
+      "name": "@nomicfoundation/hardhat-ignition-ethers",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-ignition",
+        "@nomicfoundation/hardhat-verify",
+        "hardhat"
+      ],
+      "effects": [],
+      "range": ">=3.0.0-next.0",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-ignition-ethers"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-keystore": {
+      "name": "@nomicfoundation/hardhat-keystore",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat",
+        "zod"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-toolbox-mocha-ethers"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-keystore"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-toolbox-mocha-ethers",
+        "version": "3.0.7",
+        "isSemVerMajor": true
+      }
+    },
+    "@nomicfoundation/hardhat-mocha": {
+      "name": "@nomicfoundation/hardhat-mocha",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat",
+        "mocha",
+        "zod"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-mocha"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-network-helpers": {
+      "name": "@nomicfoundation/hardhat-network-helpers",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "hardhat"
+      ],
+      "effects": [],
+      "range": ">=3.0.0-next.0",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-network-helpers"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": {
+      "name": "@nomicfoundation/hardhat-toolbox-mocha-ethers",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@nomicfoundation/hardhat-ethers-chai-matchers",
+        "@nomicfoundation/hardhat-ignition",
+        "@nomicfoundation/hardhat-ignition-ethers",
+        "@nomicfoundation/hardhat-keystore",
+        "@nomicfoundation/hardhat-mocha",
+        "@nomicfoundation/hardhat-network-helpers",
+        "@nomicfoundation/hardhat-typechain",
+        "@nomicfoundation/hardhat-verify",
+        "hardhat",
+        "mocha"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-toolbox-mocha-ethers"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-toolbox-mocha-ethers",
+        "version": "3.0.7",
+        "isSemVerMajor": true
+      }
+    },
+    "@nomicfoundation/hardhat-typechain": {
+      "name": "@nomicfoundation/hardhat-typechain",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat",
+        "zod"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-typechain"
+      ],
+      "fixAvailable": true
+    },
+    "@nomicfoundation/hardhat-verify": {
+      "name": "@nomicfoundation/hardhat-verify",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat",
+        "zod"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-ignition",
+        "@nomicfoundation/hardhat-ignition-ethers"
+      ],
+      "range": "2.0.9 || >=3.0.0-next.13",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-verify"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-ignition",
+        "version": "0.15.16",
+        "isSemVerMajor": true
+      }
+    },
+    "@nomicfoundation/hardhat-zod-utils": {
+      "name": "@nomicfoundation/hardhat-zod-utils",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "zod"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomicfoundation/hardhat-zod-utils"
+      ],
+      "fixAvailable": true
+    },
+    "glob": {
+      "name": "glob",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1244013,
+          "name": "glob",
+          "dependency": "glob",
+          "title": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal",
+          "url": "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=9.0.0 <=14.0.1"
+        },
+        "minimatch"
+      ],
+      "effects": [
+        "mocha"
+      ],
+      "range": "9.0.0 - 14.0.1",
+      "nodes": [
+        "node_modules/glob"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "hardhat": {
+      "name": "hardhat",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@nomicfoundation/hardhat-zod-utils",
+        "zod"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-ethers",
+        "@nomicfoundation/hardhat-ethers-chai-matchers",
+        "@nomicfoundation/hardhat-network-helpers",
+        "@nomicfoundation/hardhat-verify"
+      ],
+      "range": ">=3.0.0-next.0",
+      "nodes": [
+        "node_modules/hardhat"
+      ],
+      "fixAvailable": {
+        "name": "hardhat",
+        "version": "2.29.1",
+        "isSemVerMajor": true
+      }
+    },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1244623,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "minimatch has potential denial of service via globparts amplification",
+          "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-405"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=7.0.0 <11.0.1"
+        }
+      ],
+      "effects": [
+        "glob",
+        "mocha"
+      ],
+      "range": "7.0.0 - 11.0.0",
+      "nodes": [
+        "node_modules/minimatch"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "mocha": {
+      "name": "mocha",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "glob",
+        "minimatch"
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-mocha",
+        "@nomicfoundation/hardhat-toolbox-mocha-ethers"
+      ],
+      "range": "11.0.0-beta || >=11.0.1",
+      "nodes": [
+        "node_modules/mocha"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "zod": {
+      "name": "zod",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1243066,
+          "name": "zod",
+          "dependency": "zod",
+          "title": "Zod can exhaust memory while validating oversized constrained collections",
+          "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+          "severity": "high",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.6.6"
+        }
+      ],
+      "effects": [
+        "@nomicfoundation/hardhat-ethers",
+        "@nomicfoundation/hardhat-keystore",
+        "@nomicfoundation/hardhat-mocha",
+        "@nomicfoundation/hardhat-typechain",
+        "@nomicfoundation/hardhat-verify",
+        "@nomicfoundation/hardhat-zod-utils",
+        "hardhat"
+      ],
+      "range": "<4.6.6",
+      "nodes": [
+        "node_modules/zod"
+      ],
+      "fixAvailable": {
+        "name": "@nomicfoundation/hardhat-ethers",
+        "version": "4.0.13",
+        "isSemVerMajor": true
+      }
+    }
   },
-  "statusCode": 400,
-  "body": {
-    "statusCode": 400,
-    "error": "Bad Request",
-    "message": "Invalid package tree, run  npm install  to rebuild your package-lock.json"
-  },
-  "error": {
-    "summary": "",
-    "detail": ""
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 3,
+      "high": 13,
+      "critical": 0,
+      "total": 16
+    },
+    "dependencies": {
+      "prod": 13,
+      "dev": 275,
+      "optional": 86,
+      "peer": 62,
+      "peerOptional": 0,
+      "total": 287
+    }
   }
 }
